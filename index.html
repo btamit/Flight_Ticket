@@ -50,11 +50,10 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <h3>First Class $<span id="ticket-total">0</span></h3>
-                    <input id="ticket-input" class="inp-style inp-width" type="number" name="" value="0">
+                    <h3>First Class <span id="ticket-total">$150</span></h3>
+                    <input id="ticket-input" class="inp-style inp-width" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <!-- <p> <span onclick="handleTicketChange('ticket', true)" id="ticket-increase">+</span> <span  onclick="handleTicketChange('ticket', false)" id="ticket-decrease">-</span> </p>-->
                     <button class="btn" onclick="handleTicketChange('ticket', true)" id="ticket-increase">+</button>
                     <button class="btn1" onclick="handleTicketChange('ticket', false)" id="ticket-decrease">-</button>
                 </div>
@@ -62,12 +61,10 @@
 
             <div class="input-group f-class">
                 <div>
-                    <h3>Economy $<span id="economy-ticket-total">0</span> </h3>
-                    <input id="economy-ticket-input" class="inp-style inp-width" type="number" name="" value="0">
+                    <h3>Economy <span id="economy-ticket-total">$100</span> </h3>
+                    <input id="economy-ticket-input" class="inp-style inp-width" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                <!--    <p> <span onclick="handleEconomyTicketChange(true)" id="ticket-increase">+</span> <span
-                            onclick="handleEconomyTicketChange(false)" id="ticket-decrease">-</span> </p> -->
                             <button class="btn" onclick="handleEconomyTicketChange(true)" id="ticket-increase">+</button>
                             <button class="btn1" onclick="handleEconomyTicketChange(false)" id="ticket-decrease">-</button>
                 </div>
@@ -116,7 +113,6 @@
             function handleTicketChange(ticket, isIncrease) {
                 const ticketInput = document.getElementById(ticket + '-input');
                 const ticketCount = parseInt(ticketInput.value);
-                //const newTicketCount = ticketCount - 1;
                 let newTicketCount = ticketCount;
                 if (isIncrease == true) {
                     newTicketCount = ticketCount + 1;
@@ -126,14 +122,13 @@
                 }
                 ticketInput.value = newTicketCount;
                 const totalTicket = newTicketCount * 150;
-                document.getElementById(ticket + '-total').innerText = totalTicket;
+               // document.getElementById(ticket + '-total').innerText = totalTicket;
                 calculateTotal();
             }
 
             function handleEconomyTicketChange(isIncrease) {
                 const economyTicketInput = document.getElementById('economy-ticket-input');
                 const economyTicketCount = parseInt(economyTicketInput.value);
-                //const newTicketCount = ticketCount - 1;
                 let newEconomyTicketCount = economyTicketCount;
                 if (isIncrease == true) {
                     newEconomyTicketCount = economyTicketCount + 1;
@@ -143,7 +138,7 @@
                 }
                 economyTicketInput.value = newEconomyTicketCount;
                 const totalEconomyTicket = newEconomyTicketCount * 100;
-                document.getElementById('economy-ticket-total').innerText = totalEconomyTicket;
+                //document.getElementById('economy-ticket-total').innerText = totalEconomyTicket;
                 calculateTotal();
             }
 
